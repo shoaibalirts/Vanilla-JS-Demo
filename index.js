@@ -28,9 +28,11 @@ function displayContent(items) {
   for (const item of items) {
     listContent += `<li>${item}</li>`;
   }
+
   const list = document.createElement("ul");
   tabContent.innerHTML = ""; // clear existing content
   list.innerHTML = listContent; // insert new content
+
   tabContent.append(list);
 }
 
@@ -44,6 +46,7 @@ function highlightButton(btn) {
 
 function handleClick(event) {
   const btnId = event.target.id;
+  console.log(event.target.id);
   highlightButton(event.target);
   if (btnId === "btn-why-react") {
     displayContent(content[0]);
